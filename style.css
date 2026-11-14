@@ -470,7 +470,6 @@ body { overflow-x: hidden; }
   box-shadow: 0 0 0 3px rgba(59, 93, 74, .18);
 }
 
-.hp { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
 
 .send {
   justify-self: start;

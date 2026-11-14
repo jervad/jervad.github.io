@@ -48,11 +48,8 @@
             <label for="besked">Besked</label>
             <textarea id="besked" name="Besked" required></textarea>
           </div>
-          <!-- spam trap: people never see this field, bots fill it in -->
-          <div class="hp" aria-hidden="true">
-            <label for="gotcha">Lad dette felt være tomt</label>
-            <input id="gotcha" name="_gotcha" type="text" tabindex="-1" autocomplete="off">
-          </div>
+          <!-- spam trap: hidden with display:none so browser autofill skips it, but bots still fill it in -->
+          <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
           <input type="hidden" name="_subject" value="Ny besked fra jervad.dk">
           <button class="send" type="submit">Send besked</button>
           <p class="form-status" role="status" aria-live="polite"></p>
