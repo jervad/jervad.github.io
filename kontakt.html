@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="da">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kontakt – Familien Jervad</title>
+  <meta name="description" content="Kontakt – Familien Jervad.">
+  <meta name="theme-color" content="#f6f1e7">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="top">
+    <a class="logo" href="./" aria-label="jervad.dk – forside">
+      <img class="logo-flower" src="favicon.svg" alt="">
+      <span class="logo-text">jervad<span class="logo-tld">.dk</span></span>
+    </a>
+    <nav class="nav" aria-label="Hovedmenu">
+      <a href="om.html">Om os</a>
+      <a href="kontakt.html" aria-current="page">Kontakt</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <p class="eyebrow">Kontakt</p>
+      <h1>Skriv <span class="h1-lead">til os</span></h1>
+      <p class="lede">Send en besked, så vender vi tilbage.</p>
+    </section>
+
+    <section class="page">
+      <div class="panel">
+        <!-- Formspree form ID: mljbgzpe -->
+        <form class="form" action="https://formspree.io/f/mljbgzpe" method="POST">
+          <div class="field">
+            <label for="navn">Navn</label>
+            <input id="navn" name="Navn" type="text" autocomplete="name" required>
+          </div>
+          <div class="field">
+            <label for="email">E-mail</label>
+            <input id="email" name="email" type="email" autocomplete="email" required>
+          </div>
+          <div class="field">
+            <label for="telefon">Telefon <span class="optional">(valgfrit)</span></label>
+            <input id="telefon" name="Telefon" type="tel" autocomplete="tel" inputmode="tel">
+          </div>
+          <div class="field">
+            <label for="besked">Besked</label>
+            <textarea id="besked" name="Besked" required></textarea>
+          </div>
+          <!-- spam trap: people never see this field, bots fill it in -->
+          <div class="hp" aria-hidden="true">
+            <label for="gotcha">Lad dette felt være tomt</label>
+            <input id="gotcha" name="_gotcha" type="text" tabindex="-1" autocomplete="off">
+          </div>
+          <input type="hidden" name="_subject" value="Ny besked fra jervad.dk">
+          <button class="send" type="submit">Send besked</button>
+          <p class="form-status" role="status" aria-live="polite"></p>
+          <p class="small-print">Beskeden sendes via Formspree og bruges kun til at svare dig.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <p>© 2026 jervad.dk</p>
+  </footer>
+  <script>
+    (function () {
+      var form = document.querySelector('.form');
+      var status = form.querySelector('.form-status');
+      var button = form.querySelector('.send');
+
+      function say(text, kind) {
+        status.textContent = text;
+        status.className = 'form-status ' + kind;
+      }
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        if (form.action.indexOf('DIN_FORM_ID') !== -1) {
+          say('Formularen er ikke sat op endnu.', 'err');
+          return;
+        }
+        button.disabled = true;
+        say('Sender …', '');
+        fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        }).then(function (res) {
+          if (res.ok) {
+            form.reset();
+            say('Tak for din besked! Vi vender tilbage hurtigst muligt.', 'ok');
+          } else {
+            say('Beskeden kunne ikke sendes. Prøv igen om lidt.', 'err');
+          }
+        }).catch(function () {
+          say('Beskeden kunne ikke sendes. Tjek din internetforbindelse og prøv igen.', 'err');
+        }).then(function () {
+          button.disabled = false;
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
