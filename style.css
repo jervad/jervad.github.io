@@ -7,7 +7,26 @@
   --gold: #d9952f;
   --serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
   --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  /* seasonal colours (spring is the default) */
+  --glow-warm: #fbe3c4;
+  --glow-cool: #e4efd9;
+  --hill-back: #a9c79a;
+  --hill-front: #7fa878;
 }
+
+:root[data-season="autumn"] {
+  --bg: #f7efe2;
+  --glow-warm: #f8d3a6;
+  --glow-cool: #efdcc0;
+  --hill-back: #dcc07f;
+  --hill-front: #c19a5b;
+}
+
+/* show only the current season's artwork; spring if no season is set */
+.season { display: none; }
+:root:not([data-season]) .season-spring,
+[data-season="spring"] .season-spring,
+[data-season="autumn"] .season-autumn { display: inline; }
 
 * { box-sizing: border-box; }
 
@@ -16,8 +35,8 @@ html { color-scheme: light; }
 body {
   margin: 0;
   background:
-    radial-gradient(1200px 500px at 85% -10%, #fbe3c4 0%, transparent 60%),
-    radial-gradient(900px 500px at -10% 10%, #e4efd9 0%, transparent 55%),
+    radial-gradient(1200px 500px at 85% -10%, var(--glow-warm) 0%, transparent 60%),
+    radial-gradient(900px 500px at -10% 10%, var(--glow-cool) 0%, transparent 55%),
     var(--bg);
   color: var(--ink);
   font-family: var(--sans);
@@ -161,6 +180,29 @@ h1 .h1-lead {
   width: 100%;
   height: 100%;
 }
+.hills .hill-back  { fill: var(--hill-back); }
+.hills .hill-front { fill: var(--hill-front); }
+
+/* falling autumn leaves */
+.fall {
+  transform-box: fill-box;
+  transform-origin: 50% 50%;
+  animation: fall 26s ease-in-out infinite;
+  opacity: 0;
+}
+.f3 { animation-duration: 30s; animation-delay: -17s; }
+.f4 { animation-duration: 28s; animation-delay: -6s; }
+.f6 { animation-duration: 32s; animation-delay: -24s; }
+
+@keyframes fall {
+  0%   { transform: translate(0, -30px) rotate(0deg);      opacity: 0; }
+  8%   { opacity: .9; }
+  25%  { transform: translate(18px, 60px) rotate(35deg); }
+  50%  { transform: translate(-8px, 150px) rotate(-10deg); }
+  75%  { transform: translate(20px, 240px) rotate(40deg); }
+  90%  { opacity: .9; }
+  100% { transform: translate(6px, 320px) rotate(10deg);  opacity: 0; }
+}
 
 /* gentle motion */
 .sway {
@@ -192,6 +234,7 @@ h1 .h1-lead {
 
 @media (prefers-reduced-motion: reduce) {
   .sway, .n { animation: none; }
+  .fall { animation: none; opacity: .9; }
   .gallery img { transition: none; }
 }
 
