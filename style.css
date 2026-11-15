@@ -14,6 +14,13 @@
   --hill-front: #7fa878;
 }
 
+:root[data-season="summer"] {
+  --glow-warm: #fde5a8;
+  --glow-cool: #dcefcb;
+  --hill-back: #9dcb7e;
+  --hill-front: #6aa85c;
+}
+
 :root[data-season="autumn"] {
   --bg: #f7efe2;
   --glow-warm: #f8d3a6;
@@ -35,6 +42,7 @@
 .season { display: none; }
 :root:not([data-season]) .season-spring,
 [data-season="spring"] .season-spring,
+[data-season="summer"] .season-summer,
 [data-season="autumn"] .season-autumn,
 [data-season="winter"] .season-winter,
 [data-season="winter"] .season-winter-only,
@@ -208,6 +216,27 @@ main { position: relative; }
 .hills .hill-back  { fill: var(--hill-back); }
 .hills .hill-front { fill: var(--hill-front); }
 
+/* summer butterflies: slow wandering flight, wings flapping */
+.flutter { animation: wander 22s ease-in-out infinite; }
+.flutter.fb { animation-duration: 26s; animation-delay: -9s; }
+.wings {
+  transform-box: fill-box;
+  transform-origin: 50% 50%;
+  animation: flap .45s ease-in-out infinite alternate;
+}
+.fb .wings { animation-duration: .55s; }
+
+@keyframes wander {
+  0%, 100% { transform: translate(0, 0) rotate(-8deg); }
+  25%      { transform: translate(46px, -24px) rotate(10deg); }
+  50%      { transform: translate(84px, 6px) rotate(4deg); }
+  75%      { transform: translate(36px, 22px) rotate(-12deg); }
+}
+@keyframes flap {
+  from { transform: scaleX(1); }
+  to   { transform: scaleX(.35); }
+}
+
 /* falling autumn leaves */
 .fall {
   transform-box: fill-box;
@@ -292,7 +321,7 @@ main { position: relative; }
 @media (prefers-reduced-motion: reduce) {
   .sway, .n { animation: none; }
   .fall, .snow { animation: none; opacity: .9; }
-  .bulb { animation: none; }
+  .bulb, .flutter, .wings { animation: none; }
   .gallery img { transition: none; }
 }
 

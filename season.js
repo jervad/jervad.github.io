@@ -1,9 +1,8 @@
 // Picks a seasonal theme for the page based on the current month.
-// Seasons that aren't built yet fall back to spring (the original garden).
 // Christmas runs 1-26 December, then winter until the end of February.
-// For previewing, add ?season=autumn (or spring, winter, christmas) to the address.
+// For previewing, add ?season=autumn (or spring, summer, winter, christmas) to the address.
 (function () {
-  var built = ['spring', 'autumn', 'winter', 'christmas'];
+  var built = ['spring', 'summer', 'autumn', 'winter', 'christmas'];
   var now = new Date();
   var month = now.getMonth(); // 0 = January
   var day = now.getDate();

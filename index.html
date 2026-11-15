@@ -203,6 +203,76 @@
           <rect x="-12" y="-12" width="24" height="24" fill="none" stroke="#b02a26" stroke-width="1"/>
         </g>
       </g>
+      <!-- summer shapes -->
+      <g id="sunhead">
+        <g fill="#f2b61f">
+          <ellipse cx="0" cy="-15" rx="4.6" ry="9" transform="rotate(0)"/>
+          <ellipse cx="0" cy="-15" rx="4.6" ry="9" transform="rotate(24)"/>
+          <ellipse cx="0" cy="-15" rx="4.6" ry="9" transform="rotate(48)"/>
+          <ellipse cx="0" cy="-15" rx="4.6" ry="9" transform="rotate(72)"/>
+          <ellipse cx="0" cy="-15" rx="4.6" ry="9" transform="rotate(96)"/>
+          <ellipse cx="0" cy="-15" rx="4.6" ry="9" transform="rotate(120)"/>
+          <ellipse cx="0" cy="-15" rx="4.6" ry="9" transform="rotate(144)"/>
+          <ellipse cx="0" cy="-15" rx="4.6" ry="9" transform="rotate(168)"/>
+          <ellipse cx="0" cy="-15" rx="4.6" ry="9" transform="rotate(192)"/>
+          <ellipse cx="0" cy="-15" rx="4.6" ry="9" transform="rotate(216)"/>
+          <ellipse cx="0" cy="-15" rx="4.6" ry="9" transform="rotate(240)"/>
+          <ellipse cx="0" cy="-15" rx="4.6" ry="9" transform="rotate(264)"/>
+          <ellipse cx="0" cy="-15" rx="4.6" ry="9" transform="rotate(288)"/>
+          <ellipse cx="0" cy="-15" rx="4.6" ry="9" transform="rotate(312)"/>
+          <ellipse cx="0" cy="-15" rx="4.6" ry="9" transform="rotate(336)"/>
+        </g>
+        <g fill="#f7cb3c">
+          <ellipse cx="0" cy="-13" rx="3.6" ry="7" transform="rotate(12)"/>
+          <ellipse cx="0" cy="-13" rx="3.6" ry="7" transform="rotate(36)"/>
+          <ellipse cx="0" cy="-13" rx="3.6" ry="7" transform="rotate(60)"/>
+          <ellipse cx="0" cy="-13" rx="3.6" ry="7" transform="rotate(84)"/>
+          <ellipse cx="0" cy="-13" rx="3.6" ry="7" transform="rotate(108)"/>
+          <ellipse cx="0" cy="-13" rx="3.6" ry="7" transform="rotate(132)"/>
+          <ellipse cx="0" cy="-13" rx="3.6" ry="7" transform="rotate(156)"/>
+          <ellipse cx="0" cy="-13" rx="3.6" ry="7" transform="rotate(180)"/>
+          <ellipse cx="0" cy="-13" rx="3.6" ry="7" transform="rotate(204)"/>
+          <ellipse cx="0" cy="-13" rx="3.6" ry="7" transform="rotate(228)"/>
+          <ellipse cx="0" cy="-13" rx="3.6" ry="7" transform="rotate(252)"/>
+          <ellipse cx="0" cy="-13" rx="3.6" ry="7" transform="rotate(276)"/>
+          <ellipse cx="0" cy="-13" rx="3.6" ry="7" transform="rotate(300)"/>
+          <ellipse cx="0" cy="-13" rx="3.6" ry="7" transform="rotate(324)"/>
+          <ellipse cx="0" cy="-13" rx="3.6" ry="7" transform="rotate(348)"/>
+        </g>
+        <circle r="10" fill="#6b4423"/>
+        <g fill="#8a5a2e"><circle cx="-3" cy="-3" r="1.4"/><circle cx="3" cy="-2" r="1.4"/><circle cx="0" cy="3" r="1.4"/><circle cx="-4" cy="3" r="1.1"/><circle cx="4" cy="4" r="1.1"/></g>
+      </g>
+      <g id="poppy">
+        <g fill="#d8352a">
+          <circle cx="-5" cy="-1" r="7.5"/>
+          <circle cx="5" cy="-1" r="7.5"/>
+          <circle cx="0" cy="-6" r="7.5"/>
+        </g>
+        <circle cx="0" cy="3.5" r="6.5" fill="#bf2a22"/>
+        <circle cx="0" cy="-1" r="3" fill="#2a2420"/>
+      </g>
+      <g id="lavspike">
+        <path d="M0 0 L0 -32" stroke="#6f8f5a" stroke-width="1.6" fill="none"/>
+        <g fill="#8e72c4">
+          <ellipse cx="0" cy="-30" rx="2.6" ry="3.4"/>
+          <ellipse cx="0" cy="-35" rx="2.6" ry="3.4"/>
+          <ellipse cx="0" cy="-40" rx="2.4" ry="3.2"/>
+          <ellipse cx="0" cy="-45" rx="2.1" ry="3"/>
+          <ellipse cx="0" cy="-49" rx="1.6" ry="2.4"/>
+        </g>
+      </g>
+      <g id="lavender">
+        <use href="#lavspike" transform="rotate(-26) scale(.85)"/>
+        <use href="#lavspike" transform="rotate(-15) scale(.95)"/>
+        <use href="#lavspike" transform="rotate(-6)"/>
+        <use href="#lavspike" transform="rotate(3) scale(1.05)"/>
+        <use href="#lavspike" transform="rotate(12) scale(.95)"/>
+        <use href="#lavspike" transform="rotate(22) scale(.88)"/>
+        <g fill="#7f9f73">
+          <use href="#leaf" transform="scale(.45)"/>
+          <use href="#leaf" transform="scale(-.45 .45)"/>
+        </g>
+      </g>
     </defs>
   </svg>
 
@@ -340,6 +410,93 @@
         </g>
        </g>
 
+       <g class="season season-summer">
+        <!-- high summer sun -->
+        <circle cx="730" cy="95" r="70" fill="#fbe08a" opacity=".55"/>
+        <circle cx="730" cy="95" r="46" fill="#f8cf4f" opacity=".8"/>
+
+        <!-- floating notes -->
+        <g class="notes" fill="#3b5d4a">
+          <use href="#note" class="n n1" x="210" y="120"/>
+          <use href="#notes2" class="n n2" x="560" y="140"/>
+          <g transform="translate(860 200) scale(.7)"><use href="#note" class="n n4"/></g>
+        </g>
+
+        <!-- left: sunflower, poppies, lavender, marguerite -->
+        <g stroke="#4f7a52" stroke-width="4" fill="none" stroke-linecap="round">
+          <path d="M112 334 C114 290 108 250 112 214"/>
+        </g>
+        <g fill="#5d8d5c">
+          <use href="#leaf" transform="translate(112 282) scale(1.2)"/>
+          <use href="#leaf" transform="translate(112 300) scale(-1.1 1.1)"/>
+        </g>
+        <g class="sway s2"><use href="#sunhead" transform="translate(112 212) rotate(-8)"/></g>
+
+        <g stroke="#4f7a52" stroke-width="2" fill="none" stroke-linecap="round">
+          <path d="M182 334 C184 312 178 296 182 280"/>
+          <path d="M200 334 C198 316 204 304 201 294"/>
+          <path d="M222 332 C224 316 218 302 223 286"/>
+        </g>
+        <g class="sway s1"><use href="#poppy" transform="translate(182 278)"/></g>
+        <g class="sway s3"><use href="#poppy" transform="translate(201 293) scale(.85)"/></g>
+        <g class="sway s2"><use href="#poppy" transform="translate(223 284) scale(.95)"/></g>
+
+        <g class="sway s3"><use href="#lavender" transform="translate(292 330) scale(1.05)"/></g>
+
+        <g stroke="#4f7a52" stroke-width="2.5" fill="none" stroke-linecap="round">
+          <path d="M350 334 C352 312 346 298 350 284"/>
+        </g>
+        <g class="sway s1"><use href="#daisy" transform="translate(350 282) scale(.75)"/></g>
+
+        <!-- right: marguerites, poppies, sunflower, lavender -->
+        <g stroke="#4f7a52" stroke-width="2.5" fill="none" stroke-linecap="round">
+          <path d="M572 334 C574 310 568 296 572 280"/>
+          <path d="M596 334 C594 318 600 306 597 296"/>
+        </g>
+        <g class="sway s2"><use href="#daisy" transform="translate(572 278) scale(.8)"/></g>
+        <g class="sway s3"><use href="#daisy" transform="translate(597 294) scale(.65)"/></g>
+
+        <g stroke="#4f7a52" stroke-width="2" fill="none" stroke-linecap="round">
+          <path d="M664 334 C666 314 660 300 664 286"/>
+          <path d="M684 334 C682 318 688 308 685 298"/>
+        </g>
+        <g class="sway s1"><use href="#poppy" transform="translate(664 284) scale(.9)"/></g>
+        <g class="sway s2"><use href="#poppy" transform="translate(685 297) scale(.8)"/></g>
+
+        <g stroke="#4f7a52" stroke-width="3.6" fill="none" stroke-linecap="round">
+          <path d="M760 334 C762 296 756 262 760 234"/>
+        </g>
+        <g fill="#5d8d5c">
+          <use href="#leaf" transform="translate(760 290) scale(-1.1 1.1)"/>
+          <use href="#leaf" transform="translate(760 306)"/>
+        </g>
+        <g class="sway s3"><use href="#sunhead" transform="translate(760 232) rotate(6) scale(.88)"/></g>
+
+        <g class="sway s1"><use href="#lavender" transform="translate(838 330) scale(.95)"/></g>
+
+        <!-- butterflies -->
+        <g transform="translate(250 190) scale(1.35)"><g class="flutter fa">
+          <g class="wings">
+            <ellipse cx="-6" cy="-4" rx="6.5" ry="8.5" transform="rotate(-25 -6 -4)" fill="#f4d24a"/>
+            <ellipse cx="6" cy="-4" rx="6.5" ry="8.5" transform="rotate(25 6 -4)" fill="#f4d24a"/>
+            <ellipse cx="-4.5" cy="5" rx="4.5" ry="5.5" transform="rotate(20 -4.5 5)" fill="#f0c23a"/>
+            <ellipse cx="4.5" cy="5" rx="4.5" ry="5.5" transform="rotate(-20 4.5 5)" fill="#f0c23a"/>
+          </g>
+          <ellipse rx="1.5" ry="7" fill="#3b3330"/>
+          <path d="M-0.5 -6 C-2 -11 -4 -13 -6 -13 M0.5 -6 C2 -11 4 -13 6 -13" stroke="#3b3330" stroke-width="1" fill="none" stroke-linecap="round"/>
+        </g></g>
+        <g transform="translate(640 205) scale(1.35)"><g class="flutter fb">
+          <g class="wings">
+            <ellipse cx="-6" cy="-4" rx="6.5" ry="8.5" transform="rotate(-25 -6 -4)" fill="#7aa6d8"/>
+            <ellipse cx="6" cy="-4" rx="6.5" ry="8.5" transform="rotate(25 6 -4)" fill="#7aa6d8"/>
+            <ellipse cx="-4.5" cy="5" rx="4.5" ry="5.5" transform="rotate(20 -4.5 5)" fill="#9cbfe6"/>
+            <ellipse cx="4.5" cy="5" rx="4.5" ry="5.5" transform="rotate(-20 4.5 5)" fill="#9cbfe6"/>
+          </g>
+          <ellipse rx="1.5" ry="7" fill="#3b3330"/>
+          <path d="M-0.5 -6 C-2 -11 -4 -13 -6 -13 M0.5 -6 C2 -11 4 -13 6 -13" stroke="#3b3330" stroke-width="1" fill="none" stroke-linecap="round"/>
+        </g></g>
+       </g>
+
        <g class="season season-autumn">
         <!-- low autumn sun -->
         <circle cx="720" cy="135" r="64" fill="#f5b26b" opacity=".45"/>
@@ -466,6 +623,7 @@
       <article class="card card-garden">
         <svg class="icon" viewBox="-30 -36 60 60" aria-hidden="true">
           <use class="season season-spring" href="#daisy"/>
+          <g class="season season-summer" transform="translate(0 -6) scale(1.05)"><use href="#sunhead"/></g>
           <g class="season season-autumn" fill="#d9622b" transform="translate(0 -6) scale(1.9)"><use href="#mapleleaf"/></g>
           <g class="season season-winter-only" style="color:#7fa3bd" transform="translate(0 -6) scale(2.4)"><use href="#snowflake"/></g>
           <g class="season season-christmas" fill="#e0a52a" transform="translate(0 -6) scale(2.3)"><use href="#star"/></g>
