@@ -216,6 +216,18 @@ main { position: relative; }
 .hills .hill-back  { fill: var(--hill-back); }
 .hills .hill-front { fill: var(--hill-front); }
 
+/* spring blackbird: a little bob while it sings */
+.perch {
+  transform-box: fill-box;
+  transform-origin: 50% 100%;
+  animation: perch 2.6s ease-in-out infinite;
+}
+@keyframes perch {
+  0%, 60%, 100% { transform: rotate(0deg); }
+  70%           { transform: rotate(-6deg); }
+  80%           { transform: rotate(2deg); }
+}
+
 /* summer butterflies: slow wandering flight, wings flapping */
 .flutter { animation: wander 22s ease-in-out infinite; }
 .flutter.fb { animation-duration: 26s; animation-delay: -9s; }
@@ -321,7 +333,7 @@ main { position: relative; }
 @media (prefers-reduced-motion: reduce) {
   .sway, .n { animation: none; }
   .fall, .snow { animation: none; opacity: .9; }
-  .bulb, .flutter, .wings { animation: none; }
+  .bulb, .flutter, .wings, .perch { animation: none; }
   .gallery img { transition: none; }
 }
 
