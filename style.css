@@ -25,8 +25,8 @@
   --bg: #f7efe2;
   --glow-warm: #f8d3a6;
   --glow-cool: #efdcc0;
-  --hill-back: #dcc07f;
-  --hill-front: #c19a5b;
+  --hill-back: #b9c28a;
+  --hill-front: #93a866;
 }
 
 :root[data-season="winter"],
