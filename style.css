@@ -345,13 +345,13 @@ main { position: relative; }
   margin: 0 auto;
   padding: 0 16px 56px;
   position: relative;
-  margin-top: -28px;
+  margin-top: 28px;
 }
 
 body { overflow-x: hidden; }
 
 @media (max-width: 600px) {
-  .cards { margin-top: -6px; }
+  .cards { margin-top: 20px; }
 }
 
 .card {
@@ -381,6 +381,12 @@ body { overflow-x: hidden; }
   color: #f6f1e7;
 }
 .card-gospel p { color: #cfdcd2; }
+
+.card-krybbe {
+  background: linear-gradient(150deg, #a8343a, #7d2430);
+  color: #f6f1e7;
+}
+.card-krybbe p { color: #f0d3cf; }
 
 .card-photo {
   position: relative;
