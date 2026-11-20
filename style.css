@@ -357,8 +357,10 @@ body { overflow-x: hidden; }
 .card {
   border-radius: 22px;
   padding: 28px 28px 30px;
-  box-shadow: 0 10px 30px -18px rgba(44, 58, 48, .45);
+  border: 1px solid rgba(44, 58, 48, .14);
+  box-shadow: 0 1px 2px rgba(44, 58, 48, .08), 0 12px 30px -16px rgba(44, 58, 48, .5);
 }
+.card-garden { border-color: rgba(79, 122, 58, .35); }
 
 .card h2 {
   margin: 12px 0 4px;
@@ -474,7 +476,8 @@ a.card:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
   background: #fffdf8;
   border-radius: 22px;
   padding: clamp(22px, 5vw, 36px);
-  box-shadow: 0 10px 30px -18px rgba(44, 58, 48, .45);
+  border: 1px solid rgba(44, 58, 48, .14);
+  box-shadow: 0 1px 2px rgba(44, 58, 48, .08), 0 12px 30px -16px rgba(44, 58, 48, .5);
 }
 
 .panel p { margin: 0 0 12px; color: var(--soft); }
@@ -484,7 +487,7 @@ a.card:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
 .panel-soon { text-align: center; padding-top: clamp(28px, 6vw, 44px); padding-bottom: clamp(28px, 6vw, 44px); }
 .panel-soon .soon-icon { width: 76px; height: 76px; margin: 0 auto 16px; }
 .panel-soon p { font-size: 1.1rem; }
-.panel-soon.card-garden { background: linear-gradient(150deg, #eef4dc 0%, #d2e3b5 100%); }
+.panel-soon.card-garden { border-color: rgba(79, 122, 58, .35); background: linear-gradient(150deg, #eef4dc 0%, #d2e3b5 100%); }
 .panel-soon.card-gospel { background: linear-gradient(150deg, #3b5d4a, #2b4537); color: #f6f1e7; }
 .panel-soon.card-krybbe { background: linear-gradient(150deg, #a8343a, #7d2430); color: #f6f1e7; }
 .panel-soon.card-gospel p, .panel-soon.card-krybbe p { color: inherit; opacity: .92; }
