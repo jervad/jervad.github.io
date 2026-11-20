@@ -51,7 +51,7 @@
 
 * { box-sizing: border-box; }
 
-html { color-scheme: light; }
+html { color-scheme: light; scrollbar-gutter: stable; }
 
 body {
   margin: 0;
@@ -370,7 +370,9 @@ body { overflow-x: hidden; }
 .card p { margin: 0; }
 
 .card-garden {
-  background: #fffdf8;
+  background:
+    url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"%3E%3Cg fill="%236f9a52" opacity=".32"%3E%3Cpath d="M200 200 C170 170 150 140 120 95" stroke="%236f9a52" stroke-width="2.5" fill="none"/%3E%3Cpath transform="translate(188 186) rotate(-60) scale(1)" d="M0 0 C6 -6 18 -7 26 0 C18 7 6 6 0 0Z"/%3E%3Cpath transform="translate(176 172) rotate(40) scale(1)" d="M0 0 C6 -6 18 -7 26 0 C18 7 6 6 0 0Z"/%3E%3Cpath transform="translate(166 158) rotate(-70) scale(1.1)" d="M0 0 C6 -6 18 -7 26 0 C18 7 6 6 0 0Z"/%3E%3Cpath transform="translate(156 142) rotate(30) scale(1.1)" d="M0 0 C6 -6 18 -7 26 0 C18 7 6 6 0 0Z"/%3E%3Cpath transform="translate(146 128) rotate(-80) scale(1)" d="M0 0 C6 -6 18 -7 26 0 C18 7 6 6 0 0Z"/%3E%3Cpath transform="translate(138 116) rotate(15) scale(1)" d="M0 0 C6 -6 18 -7 26 0 C18 7 6 6 0 0Z"/%3E%3Cpath transform="translate(126 102) rotate(-55) scale(0.85)" d="M0 0 C6 -6 18 -7 26 0 C18 7 6 6 0 0Z"/%3E%3C/g%3E%3C/svg%3E') right -12px bottom -18px / 230px 230px no-repeat,
+    linear-gradient(150deg, #eef4dc 0%, #d2e3b5 100%);
   color: var(--ink);
 }
 .card-garden h2 { color: var(--green); }
@@ -414,6 +416,7 @@ body { overflow-x: hidden; }
 }
 .card-photo .card-body { position: relative; z-index: 1; }
 .card-photo p { color: #e8eee9; }
+.card-photo .icon { filter: drop-shadow(0 1px 5px rgba(0, 0, 0, .5)); }
 .card-photo h2, .card-photo p { text-shadow: 0 1px 8px rgba(0, 0, 0, .45); }
 .card-more {
   display: inline-block;
@@ -422,10 +425,20 @@ body { overflow-x: hidden; }
   color: #f7d58b;
 }
 .card-photo:hover .card-img { transform: scale(1.04); }
+a.card {
+  display: block;
+  text-decoration: none;
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+a.card-photo { display: flex; }
+a.card:hover { transform: translateY(-3px); box-shadow: 0 16px 34px -18px rgba(44, 58, 48, .55); }
+a.card:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
 .card-photo:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
 
 @media (prefers-reduced-motion: reduce) {
   .card-photo .card-img { transition: none; }
+  a.card { transition: none; }
+  a.card:hover { transform: none; }
 }
 
 .icon {
@@ -466,6 +479,17 @@ body { overflow-x: hidden; }
 
 .panel p { margin: 0 0 12px; color: var(--soft); }
 .panel p:last-child { margin-bottom: 0; }
+
+/* placeholder pages */
+.panel-soon { text-align: center; padding-top: clamp(28px, 6vw, 44px); padding-bottom: clamp(28px, 6vw, 44px); }
+.panel-soon .soon-icon { width: 76px; height: 76px; margin: 0 auto 16px; }
+.panel-soon p { font-size: 1.1rem; }
+.panel-soon.card-garden { background: linear-gradient(150deg, #eef4dc 0%, #d2e3b5 100%); }
+.panel-soon.card-gospel { background: linear-gradient(150deg, #3b5d4a, #2b4537); color: #f6f1e7; }
+.panel-soon.card-krybbe { background: linear-gradient(150deg, #a8343a, #7d2430); color: #f6f1e7; }
+.panel-soon.card-gospel p, .panel-soon.card-krybbe p { color: inherit; opacity: .92; }
+.panel-soon a { color: inherit; font-weight: 600; }
+.panel-soon.card-garden a { color: var(--green); }
 
 /* about page */
 .panel-portrait {
